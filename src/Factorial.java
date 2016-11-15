@@ -34,12 +34,24 @@ public class Factorial {
         return false;
     }
 
+
+
     private static void calculateFactorial (int number){
         long factorial = 1;
+        String result = "1";
+        String spaces = " ";
+
+        for (int s = 1; s <= number; s ++){
+            spaces += "    ";
+        }
 
         for(int i = 1; i <= number; i++) {
             factorial = factorial * i;
-            System.out.println(i + "!" + " = " + factorial);
+            if (i != 1) {
+                result += " x " + i;
+            }
+            System.out.println(i + "!" + " = " + result + spaces + " = " + factorial);
+            spaces = spaces.substring(4,spaces.length()) + "";
 
         }
     }
