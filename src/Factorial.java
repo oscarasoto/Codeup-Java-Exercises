@@ -50,7 +50,7 @@ public class Factorial {
             if (i != 1) {
                 result += " x " + i;
             }
-            System.out.println(i + "!" + " = " + result + spaces + " = " + factorial);
+            System.out.println(i + "!" + " = " + result + spaces + "= " + factorial);
             spaces = spaces.substring(4,spaces.length()) + "";
 
         }
