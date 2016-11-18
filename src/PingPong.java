@@ -56,22 +56,24 @@ public class PingPong {
     }
 
     private static boolean isInteger(String input) {
-        boolean isInteger;
 
         try
         {
             Integer.parseInt(input);
-            isInteger = true;
+            return true;
         }
         catch(NumberFormatException nfe)
         {
             return false;
         }
-        return isInteger;
+    }
+
+    private static int convertSideStringToNumber(String userInput) {
+        return userInput.equalsIgnoreCase(userInput) ? 0 : 1;
     }
 
     private static void pingPong (String playerName) {
-        String userSide;
+        int userSide;
         int ballSide;
         int userScore = 0;
         int computerScore = 0;
@@ -80,15 +82,12 @@ public class PingPong {
         while (!gameOver) {
             System.out.println("Which side of the table you would like to swing your paddle (left or right).");
 
-            userSide = getUserInput();
+            userSide = convertSideStringToNumber(getUserInput());
             ballSide = generateRandom();
 
-            if (userSide.toLowerCase().equals("left") && ballSide == 0) {
+            if (userSide == ballSide) {
                 userScore++;
                 System.out.println("Great! you have " + userScore + " points");
-            } else if (userSide.toLowerCase().equals("rigth") && ballSide == 1) {
-                userScore++;
-                System.out.println("Great! " + playerName + " you have " + userScore + " points");
             } else {
                 computerScore++;
                 System.err.println("I have " + computerScore + " points");

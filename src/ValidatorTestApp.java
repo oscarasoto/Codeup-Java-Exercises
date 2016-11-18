@@ -3,6 +3,8 @@ import java.util.Scanner;
 /**
  * @author Oscar Soto on 11/16/16.
  *
+ * There is no reasonable excuse for doing anything less than your best.
+ * - Martin, Robert C.
  */
 
 public class ValidatorTestApp {
