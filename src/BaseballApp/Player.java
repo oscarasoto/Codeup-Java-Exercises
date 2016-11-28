@@ -1,3 +1,5 @@
+package BaseballApp;
+
 import java.util.List;
 
 /**
@@ -13,10 +15,10 @@ import java.util.List;
 // types of methods
 
 // * static
-//       to the class: Player
-//       Player.sluggingAverage();  //
+//       to the class: BaseballApp.Player
+//       BaseballApp.Player.sluggingAverage();  //
 // * instance
-//     Player player = new Player(atBats); // creating an instance (object)
+//     BaseballApp.Player player = new BaseballApp.Player(atBats); // creating an instance (object)
 //     player.sluggingAverage();
 
 

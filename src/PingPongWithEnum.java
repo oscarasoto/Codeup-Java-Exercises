@@ -35,7 +35,7 @@ public class PingPongWithEnum {
         } while (isGameOver(playerScore, cpuScore));
 
         if (isWinner(playerScore)) {
-            System.out.println("Player won!!!");
+            System.out.println("BaseballApp.Player won!!!");
         } else {
             System.out.println("CPU won!!!");
         }
@@ -58,7 +58,7 @@ public class PingPongWithEnum {
 
     private static void showScores(int playerScore, int cpuScore) {
         System.out.println(
-                "Player score is " + playerScore
+                "BaseballApp.Player score is " + playerScore
                         + ", CPU score is " + cpuScore
         );
     }
