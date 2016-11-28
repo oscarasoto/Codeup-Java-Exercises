@@ -1,3 +1,5 @@
+import java.util.List;
+
 /**
  * @author Oscar Soto on 11/28/16.
  *         There is no reasonable excuse for doing anything less than your best.
@@ -21,17 +23,16 @@
 // Object = data + operations (behaviour)
 
 class Player {
-    int[] atBats;
-    int next = 0;
+
+    private List<Integer> atBats;
 
     // constructor ?
-    Player(int[] atBats) {
+    Player(List<Integer> atBats) {
         this.atBats = atBats;
     }
 
     void addAtBatBases(int basesEarned) {
-        atBats[next] = basesEarned;
-        next++;
+        atBats.add(basesEarned);
     }
 
     // belongs to the class
@@ -41,7 +42,7 @@ class Player {
         for (int numberOfBases : atBats) {
             sumOfBases += numberOfBases;
         }
-        return sumOfBases / atBats.length;
+        return sumOfBases / atBats.size();
     }
 
     // belongs to the class
@@ -53,6 +54,6 @@ class Player {
                 countOfHits++;
             }
         }
-        return countOfHits / atBats.length;
+        return countOfHits / atBats.size();
     }
 }

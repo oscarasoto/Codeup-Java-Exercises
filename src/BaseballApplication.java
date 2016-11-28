@@ -1,4 +1,4 @@
-import java.util.InputMismatchException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -10,7 +10,7 @@ import java.util.Scanner;
 /// Procedural
 // as a series of steps towards a goal (output)
 
-// OO code
+// Object Oriented code
 // has layers
 // * Input
 // * Output
@@ -21,13 +21,16 @@ import java.util.Scanner;
 public class BaseballApplication {
     public static void main(String[] args) {
         int numberAtBats;
+        // object creation
         PlayerConsole console = new PlayerConsole(new Scanner(System.in), System.out);
-        do {
-            numberAtBats = console.getNumberAtBats();
-            Player player = new Player(new int[numberAtBats]);
 
+        do {
+            Player player = new Player(new ArrayList<>());
+            // input
+            numberAtBats = console.getNumberAtBats();
             console.getAtBatsInformation(player, numberAtBats);
 
+            // output
             console.showPlayerSummary(
                     player.battingAverage(),
                     player.sluggingAverage()
