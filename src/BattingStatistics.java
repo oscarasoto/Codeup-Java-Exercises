@@ -14,7 +14,7 @@ public class BattingStatistics {
         Scanner sc = new Scanner(System.in);
         int [][] atBats;
 
-        System.out.println("Welcome to Batting Statistics");
+        System.out.println("Welcome to BaseballApplication Statistics");
 
         atBats = new int[getNumberOfBatters()][getNumberOfAtBats()];
 
