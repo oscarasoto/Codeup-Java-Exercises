@@ -1,4 +1,4 @@
-package BaseballApp;
+package baseballApp;
 
 import java.util.ArrayList;
 import java.util.Scanner;
