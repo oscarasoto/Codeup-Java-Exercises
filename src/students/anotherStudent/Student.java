@@ -1,5 +1,7 @@
+package students.anotherStudent;
+
 /**
- * Student Data
+ * students.anotherStudent.Student Data
  *
  * @author Oscar Soto on 11/28/16.
  *         There is no reasonable excuse for doing anything less than your best.

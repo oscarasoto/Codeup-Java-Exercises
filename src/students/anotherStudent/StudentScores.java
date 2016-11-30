@@ -1,3 +1,5 @@
+package students.anotherStudent;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -58,7 +60,7 @@ public class StudentScores {
         System.out.println("Sorted Result: ");
         for(Student student : students){
             System.out.println("=======================================");
-            System.out.println("Student name: " + student.lastName + " score: " + student.score);
+            System.out.println("students.anotherStudent.Student name: " + student.lastName + " score: " + student.score);
         }
     }
 

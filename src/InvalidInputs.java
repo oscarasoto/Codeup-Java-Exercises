@@ -43,11 +43,11 @@ public class InvalidInputs {
 
         for (int i = 0; i < studentsName.length; i ++){
             if (studentsName[i].toLowerCase().equals(studentName)) {
-                System.out.println("Student " + studentName + " was found");
+                System.out.println("students.anotherStudent.Student " + studentName + " was found");
                 System.out.println(studentName + " age is: " + studentsAge[i]);
             }
         }
-        System.out.println("Student " + studentName + " was not found");
+        System.out.println("students.anotherStudent.Student " + studentName + " was not found");
 
     }
 
