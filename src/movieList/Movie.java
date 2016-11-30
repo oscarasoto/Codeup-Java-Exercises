@@ -10,14 +10,14 @@ class Movie {
         return title;
     }
 
-    String getCategory() {
+    Category getCategory() {
         return category;
     }
 
     private String title;
-    private String category;
+    private Category category;
 
-    Movie (String title, String category){
+    Movie (String title, Category category){
         this.title = title;
         this.category = category;
     }

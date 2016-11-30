@@ -15,13 +15,15 @@ import java.util.Scanner;
 public class MovieListApp {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in).useDelimiter("\n");
+        Catalog catalog = new Catalog(getMovies());
         List<Movie> userMovieList;
 
         System.out.println("Welcome to the Movies Application");
 
         do {
 
-            userMovieList = getUserSelection();
+            Category category = getUserSelection();
+            userMovieList  = catalog.suggestMoviesIn(category);
 
             showMovieSuggestions(userMovieList);
 
@@ -31,9 +33,8 @@ public class MovieListApp {
 
     }
 
-    private static List<Movie> getUserSelection() {
+    private static Category getUserSelection() {
         Scanner input = new Scanner(System.in).useDelimiter("\n");
-        List<Movie> userMovieList = new ArrayList<>();
         int userSelection;
 
         System.out.println("1 - Animated");
@@ -43,38 +44,7 @@ public class MovieListApp {
         System.out.println("Select a category from the list by number:");
         userSelection = input.nextInt();
 
-        switch (userSelection) {
-            case 1:
-                userMovieList = generateMovieSuggestions("animated");
-                break;
-            case 2:
-                userMovieList = generateMovieSuggestions("drama");
-                break;
-            case 3:
-                userMovieList = generateMovieSuggestions("horror");
-                break;
-            case 4:
-                userMovieList = generateMovieSuggestions("scifi");
-                break;
-            default:
-                System.out.println("Sorry we don't have a movie of that category");
-
-        }
-        return userMovieList;
-    }
-
-    private static List<Movie> generateMovieSuggestions(String category) {
-        List<Movie> moviesFullList = getMovies();
-        List<Movie> userMovieSuggestions = new ArrayList<>();
-
-        for(Movie movie: moviesFullList){
-            if (category.equalsIgnoreCase(movie.getCategory())){
-                userMovieSuggestions.add(movie);
-            }
-        }
-
-        return userMovieSuggestions;
-
+        return Category.fromNumber(userSelection);
     }
 
     private static void showMovieSuggestions(List<Movie> userMovieSuggestions) {
