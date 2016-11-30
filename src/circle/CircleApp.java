@@ -12,12 +12,11 @@ public class CircleApp {
         Scanner input = new Scanner(System.in).useDelimiter("\n");
 
         System.out.println("Welcome to the Circle Application");
-
+        Circle circle;
         do {
 
-            System.out.println("Enter the radius of your circle: ");
-            double radius = input.nextDouble();
-            Circle circle = new Circle(radius);
+            double radius = getRadius(input);
+            circle = new Circle(radius);
 
             System.out.println("The circumference of this circle is: " + circle.getFormattedCircumference());
             System.out.println("The area of this circle is: " + circle.getFormattedArea());
@@ -29,5 +28,16 @@ public class CircleApp {
 
         System.out.println("Goodbye !, the number of circles you built was: " + Circle.getObjectCount());
 
+    }
+
+    private static double getRadius(Scanner input) {
+        System.out.println("Enter the radius of your circle: ");
+        String radius = input.next();
+        if (Validator.isValidDouble(radius)) {
+            return Validator.validValue();
+        } else {
+            System.out.println("Enter a valid value (only numbers)");
+            return getRadius(input);
+        }
     }
 }
