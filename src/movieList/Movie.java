@@ -24,6 +24,6 @@ class Movie {
 
     @Override
     public String toString() {
-        return String.format("Movie: %s, belongs to Category: %s", title, category);
+        return String.format("|--- Movie: %s, belongs to Category: %s ---|", title, category);
     }
 }

@@ -27,6 +27,7 @@ public class MovieListApp {
 
             showMovieSuggestions(userMovieList);
 
+            System.out.println("-------------------------------------------------------------------");
             System.out.println("Do you want to generate another list (y/n) ?");
 
         } while ("y".equalsIgnoreCase(input.next()));
@@ -51,8 +52,8 @@ public class MovieListApp {
 
     private static void showMovieSuggestions(List<Movie> userMovieSuggestions) {
         for(Movie movie: userMovieSuggestions){
-            System.out.println(movie);
             System.out.println("-------------------------------------------------------------------");
+            System.out.println(movie);
         }
     }
 
