@@ -22,5 +22,8 @@ class Movie {
         this.category = category;
     }
 
-
+    @Override
+    public String toString() {
+        return String.format("Movie: %s, belongs to Category: %s", title, category);
+    }
 }

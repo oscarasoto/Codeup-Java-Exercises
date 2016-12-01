@@ -9,7 +9,9 @@ enum Category {
     animated,
     drama,
     horror,
-    scifi;
+    scifi,
+    musical,
+    comedy;
 
     public static Category fromNumber(int number){
         return Category.values()[number-1];

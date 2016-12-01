@@ -3,11 +3,12 @@ package movieList;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Catalog {
+class Catalog {
     private List<Movie> movies;
-    public Catalog(List<Movie> movies) {
-        this.movies = movies;
-    }
+
+//    Catalog(List<Movie> movies) {
+//        this.movies = movies;
+//    }
 
     List<Movie> suggestMoviesIn(Category category) {
 
@@ -21,5 +22,16 @@ public class Catalog {
 
         return userMovieSuggestions;
 
+    }
+
+    static Catalog populate() {
+        Catalog catalog = new Catalog();
+        catalog.movies = new ArrayList<>();
+
+        for(int i = 1; i <=100; i++){
+            catalog.movies.add(MovieIO.getMovie(i));
+        }
+
+        return catalog;
     }
 }

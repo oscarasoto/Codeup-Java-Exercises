@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class MovieListApp {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in).useDelimiter("\n");
-        Catalog catalog = new Catalog(getMovies());
+        Catalog catalog = Catalog.populate();
         List<Movie> userMovieList;
 
         System.out.println("Welcome to the Movies Application");
@@ -41,6 +41,8 @@ public class MovieListApp {
         System.out.println("2 - Drama");
         System.out.println("3 - Horror");
         System.out.println("4 - Sci-Fi");
+        System.out.println("5 - Musical");
+        System.out.println("6 - Comedy");
         System.out.println("Select a category from the list by number:");
         userSelection = input.nextInt();
 
@@ -49,19 +51,9 @@ public class MovieListApp {
 
     private static void showMovieSuggestions(List<Movie> userMovieSuggestions) {
         for(Movie movie: userMovieSuggestions){
-            System.out.println("Title: " + movie.getTitle() + " == Category: " + movie.getCategory());
+            System.out.println(movie);
             System.out.println("-------------------------------------------------------------------");
         }
-    }
-
-    private static List<Movie> getMovies() {
-        List<Movie> movies = new ArrayList<>();
-
-        for(int i = 1; i <=100; i++){
-            movies.add(MovieIO.getMovie(i));
-        }
-
-        return movies;
     }
 
 
