@@ -17,9 +17,9 @@ public class RoshamboApp {
         System.out.println("What is your name: ");
         String name = input.next();
         Player opponent = Player.opponentSelection(getOpponent(input));
+        opponent.generateRoshambo();
 
-        HumanPlayer humanPlayer = new HumanPlayer(getHumanPlayerSelection(input));
-        humanPlayer.setName(name);
+        HumanPlayer humanPlayer = new HumanPlayer(name, getHumanPlayerSelection(input));
         humanPlayer.setChoice(humanPlayer.generateRoshambo());
 
         // output
@@ -45,9 +45,9 @@ public class RoshamboApp {
 
     private static String determineWinner(Player opponent, HumanPlayer humanPlayer) {
         String whoWins;
-        if (humanPlayer.getChoice().isTie(opponent.getChoice())){
+        if (humanPlayer.tiesWith(opponent)) {
             whoWins = "Nobody wins";
-        } else if (humanPlayer.getChoice().beats(opponent.getChoice())){
+        } else if (humanPlayer.defeats(opponent)){
             whoWins = "You Win !!";
         } else {
             whoWins = "You Lose !!";

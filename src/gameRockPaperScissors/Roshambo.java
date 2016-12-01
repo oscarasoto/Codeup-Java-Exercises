@@ -5,7 +5,7 @@ package gameRockPaperScissors;
  *         There is no reasonable excuse for doing anything less than your best.
  *         - Martin, Robert C.
  */
-public enum Roshambo {
+enum Roshambo {
     rock("Rock!!", 1),
     paper("Paper!!", 2),
     scissors("Scissors!!", 0);

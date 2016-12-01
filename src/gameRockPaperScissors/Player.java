@@ -9,11 +9,11 @@ class Player {
     private String name;
     private Roshambo choice;
 
-    Roshambo getChoice() {
-        return choice;
+    Player(String name) {
+        setName(name);
     }
 
-    void setName(String name) {
+    private void setName(String name) {
         this.name = name;
     }
 
@@ -25,23 +25,22 @@ class Player {
         return null;
     }
 
-    public String gameInfo() {
+    String gameInfo() {
         return String.format("%s selected: %s", name, choice);
     }
 
     static Player opponentSelection(int opponent) {
         if(opponent == 1) {
-            ComputerPlayer newComputerPlayer = new ComputerPlayer();
-            newComputerPlayer.setName("Computer");
-            newComputerPlayer.setChoice(newComputerPlayer.generateRoshambo());
-            return newComputerPlayer;
-
-        } else {
-            RockPlayer newRockPlayer = new RockPlayer();
-            newRockPlayer.setName("RockPlayer");
-            newRockPlayer.setChoice(newRockPlayer.generateRoshambo());
-            return newRockPlayer;
+            return new ComputerPlayer("Computer");
         }
+        return new RockPlayer("RockPlayer");
     }
 
+    boolean tiesWith(Player opponent) {
+        return choice.isTie(opponent.choice)    ;
+    }
+
+    boolean defeats(Player opponent) {
+        return choice.beats(opponent.choice);
+    }
 }

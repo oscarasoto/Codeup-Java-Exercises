@@ -5,9 +5,15 @@ package gameRockPaperScissors;
  *         There is no reasonable excuse for doing anything less than your best.
  *         - Martin, Robert C.
  */
-public class RockPlayer extends Player{
+class RockPlayer extends Player{
+    public RockPlayer(String name) {
+        super(name);
+    }
+
     @Override
     public Roshambo generateRoshambo() {
-        return Roshambo.fromSelection(1);
+        Roshambo roshambo = Roshambo.fromSelection(1);
+        setChoice(roshambo);
+        return roshambo;
     }
 }

@@ -5,10 +5,11 @@ package gameRockPaperScissors;
  *         There is no reasonable excuse for doing anything less than your best.
  *         - Martin, Robert C.
  */
-public class HumanPlayer extends Player {
+class HumanPlayer extends Player {
     private int playerSelection;
 
-    public HumanPlayer(int playerSelection) {
+    HumanPlayer(String name, int playerSelection) {
+        super(name);
         this.playerSelection = playerSelection;
     }
 
