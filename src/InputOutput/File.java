@@ -31,6 +31,8 @@ public class File<T> {
         try (
                 FileWriter fileWriter = new FileWriter(filePath.toFile(), append);
                 BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+//                Another was to create file writer just with one line, will need to replace the PrintWriter.
+//                FileOutputStream fileOutputStream = new FileOutputStream(filePath.toFile(),append);
                 PrintWriter output = new PrintWriter(bufferedWriter)
         ) {
 

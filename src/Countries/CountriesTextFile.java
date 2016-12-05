@@ -16,16 +16,13 @@ class CountriesTextFile {
     private String fileName = "countries.txt";
 
     List<String> readCountries() throws IOException {
-
         File<String> file = new File<>(new Folder(folderName), fileName);
-
         return file.readFromFile();
     }
 
     void writeCountries(List<String> countries) throws IOException {
 
         File<String> file = new File<>(new Folder(folderName), fileName);
-
         file.writeInFile(countries,true);
 
     }
