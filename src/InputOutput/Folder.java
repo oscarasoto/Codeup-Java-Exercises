@@ -11,12 +11,20 @@ import java.nio.file.Paths;
  *         - Martin, Robert C.
  */
 public class Folder {
+    String folderName;
 
-    public Folder(String folderName) throws IOException {
+    public Folder(String folderName) {
+        this.folderName = folderName;
+    }
+
+    public void createIfNotExists() throws IOException {
         Path folderPath = Paths.get(folderName);
         if (Files.notExists(folderPath)) {
             Files.createDirectory(folderPath);
         }
     }
 
+    public String getPath() {
+        return folderName;
+    }
 }
